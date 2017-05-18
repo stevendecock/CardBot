@@ -3,6 +3,7 @@ package be.decock.steven.cardbot;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class MainApplication extends JFrame {
     private JPanel contentPane;
@@ -28,7 +29,7 @@ public class MainApplication extends JFrame {
      */
     public MainApplication() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 1280, 720);
+        setBounds(100, 100, 500, 500);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -41,7 +42,9 @@ public class MainApplication extends JFrame {
 
     public void paint(Graphics g){
         g = contentPane.getGraphics();
-        g.drawImage(videoCap.getOneFrame(), 0, 0, this);
+        BufferedImage frame = videoCap.getOneFrame();
+        setSize(frame.getWidth(), frame.getHeight());
+        g.drawImage(frame, 0, 0, this);
     }
 
     class MyThread extends Thread{
