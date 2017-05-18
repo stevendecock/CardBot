@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CardBot.iml" filepath="$PROJECT_DIR$/.idea/modules/CardBot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CardBot_main.iml" filepath="$PROJECT_DIR$/.idea/modules/CardBot_main.iml" group="CardBot" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CardBot_test.iml" filepath="$PROJECT_DIR$/.idea/modules/CardBot_test.iml" group="CardBot" />
+    </modules>
+  </component>
+</project>
