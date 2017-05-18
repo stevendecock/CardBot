@@ -2,6 +2,8 @@ package be.decock.steven.cardbot;
 
 import java.awt.image.BufferedImage;
 import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
 import org.opencv.videoio.VideoCapture;
 
 public class VideoCap {
@@ -19,6 +21,9 @@ public class VideoCap {
 
     BufferedImage getOneFrame() {
         cap.read(mat2Img.mat);
-        return mat2Img.getImage(mat2Img.mat);
+        Mat matColorFixed = mat2Img.mat.clone();
+        Imgproc.cvtColor(mat2Img.mat, matColorFixed, Imgproc.COLOR_BGR2RGB);
+//        Core.flip(matColorFixed, matColorFixed, 1);
+        return mat2Img.getImage(matColorFixed);
     }
 }
